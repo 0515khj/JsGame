@@ -28,7 +28,7 @@ const data =[
 $questionbtn.addEventListener('click',e=>{
    const randomidx = Math.floor(Math.random() * data.length);
    currentAnswer = data[randomidx].result;
-   $question.textContent= `문제 : ${data[randomidx].name} 의 사용법은 ??`;
+   $question.textContent= `문제 : ${data[randomidx].name} 에 대해 알맞은것은??`;
    
     $answersForm.innerHTML = '';
     $result.textContent = '';
@@ -75,7 +75,7 @@ $submitbtn.addEventListener('click',e=>{
 
 
     if(select === currentAnswer){
-        $result.textContent='정답입니다 !';
+        $result.textContent='정답입니다 ! 다른문제도 풀어보세요!!';
     }else{
         $result.innerHTML = `오답입니다 ! <br>  정답 : ${currentAnswer} .`
        
@@ -87,9 +87,8 @@ function Clock() {
     let date = new Date();
     let hours = Time(date.getHours());
     let minutes = Time(date.getMinutes());
-    let seconds = Time(date.getSeconds());
 
-    Write( hours , minutes , seconds)
+    Write( hours , minutes)
 
     function Time(num){
         return(num < 10 ? 'O'+num: ''+ num);
